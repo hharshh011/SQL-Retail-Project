@@ -58,7 +58,7 @@ DATEDIFF(month,tran_date,GETDATE()) as 'MONTH',
 DATEDIFF(year,tran_date,GETDATE()) as 'YEAR' from dbo.[transaction]
 
 
---Q5:Which product category does the sub-category “DIY” belong to?
+--Q5:Which product category does the sub-category â€œDIYâ€ belong to?
 
 
 select prod_cat from dbo.product
@@ -135,8 +135,8 @@ group by cust_id
 having count(cust_id)>10
 
 
---Q8:What is the combined revenue earned from the “Electronics” & “Clothing” categories,
---from “Flagship stores”?
+--Q8:What is the combined revenue earned from the â€œElectronicsâ€ & â€œClothingâ€ categories,
+--from â€œFlagship storesâ€?
 
 
 select sum(total_amt) as total_revenue from dbo.[transaction]
@@ -144,7 +144,7 @@ where prod_cat_code in (select distinct prod_cat_code from dbo.product
 where prod_cat in ('clothing' , 'electronics')) and Store_type='flagship store' and qty>0
 
 
---Q9:What is the total revenue generated from “Male” customers in “Electronics” category?
+--Q9:What is the total revenue generated from â€œMaleâ€ customers in â€œElectronicsâ€ category?
 --Output should display total revenue by prod sub-cat.
 
 
